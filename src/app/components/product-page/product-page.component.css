@@ -1,0 +1,182 @@
+
+.shopContainer{
+  position: absolute;
+   display: flex;
+   justify-content: space-around;
+   /* align-items: flex-start; */
+}
+
+#cardDiv{
+  margin:4%;
+  padding-left:4%;
+  height: 400px;
+  width:1000px;
+  overflow-x:auto ;
+  float:right;
+}
+
+
+button.Buy{
+  width: 85%;
+  height: 25%;
+  float:right
+}
+
+.mr-sm-2{
+  width:10rem;
+}
+
+div#cardId{
+    margin : 3%;
+    padding: 2%;
+
+}
+button{
+    width: max-content;
+    font-size: large;
+    margin: 10px;
+    padding : 10px;    
+
+    /* Round corners button */
+    border-radius: 25px; 
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+} 
+.modal {
+    display: block;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.45);
+    position: fixed;
+  }
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 45%;
+    height: 68%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.6s;
+  }
+  
+  .middleText {
+    font-size: 20px;
+  }
+  .modal-body1 {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 5%;
+  }
+  h2{
+      text-align: center ;
+  }
+ 
+
+  .flip-card {
+    background-color: transparent;
+    border:solid #F1B24A;
+    width: 140px;
+    height: 280px;
+    margin: 2%;
+    margin-bottom: 6%;
+    text-align: center;
+    font-family: 'Big Shoulders Display', cursive;
+    display: inline-block;
+  }
+  
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 20px;
+  }
+  
+  .flip-card-front {
+    background-color: transparent;
+    color: black;
+  }
+  
+  .flip-card-back {
+    display:flex;
+    flex-wrap:wrap;
+    background-color: transparent;
+    color: #164A41;
+    transform: rotateY(180deg);
+    opacity: 0.95;
+    font-size: large;
+    line-height: 1.8;
+  }
+  
+  
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #ffffff; 
+    border-radius: 33%;;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #F1B24A;
+    border-radius:30%; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #9dc88d; 
+  }
+@media only screen and (min-width: 250px) and (max-width: 750px) {
+   
+    button{
+      width:max-content;
+      margin: 5px;
+      padding : 5px;  
+    }
+
+    #cardDiv{
+      height: 750px;
+      width:450px;
+    }
+   
+  
+  }
+
+  @media only screen and (max-width: 1200px) and (min-width: 750px){
+   
+   
+    #cardDiv{
+      height: 23rem;
+      width:600px;
+      
+    }
+    
+   
+  
+  }

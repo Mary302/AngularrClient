@@ -1,0 +1,64 @@
+
+<div class="loginContainer">
+    <div class="banner">
+        <h2>
+            Join our {{this.numberOfOrders.allOrders}}
+            happy customers
+    </h2>
+    <h2>
+        We got {{this.numberOfProducts.productAmount}} products for sale!
+    </h2>
+    </div>
+
+    <form class="login" [formGroup]="loginDetails">
+        <input type="text" 
+               class="form-control form-control-lg"
+               placeholder="email" 
+               name="email" 
+               [(ngModel)]="userLoginDetails.email"
+               formControlName="email"
+               [class.is.invalid]="email.invalid && email.touched"><br>
+        <div *ngIf="(email.errors?.required && email.touched) || email.dirty">
+            <p *ngIf="email.errors?.required">valid email is required</p>
+        </div>       
+
+        <input type="password" 
+               class="form-control form-control-lg"
+               placeholder="Password" 
+               name="password" 
+               [(ngModel)]="userLoginDetails.password"
+               formControlName="password"
+               [class.is.invalid]="password.invalid && password.touched"><br>
+               <div *ngIf="(password.errors?.required && password.touched) || password.dirty">
+                <p *ngIf="password.errors?.required">password is required</p>
+            </div>   
+    </form> 
+
+        <input type="button"
+               class="loginBtn" 
+               (click)="login()"  
+               value="Login"  />
+
+        <div class="enterBtn"><br><br>
+            <button class="purchaseBtn" 
+                   (click)="goToProducts()" 
+                   *ngIf="this.usersService.isFirstPurchase">
+                   Enjoy your first purchase!</button>
+
+            <button class="purchaseBtn" 
+                    (click)="goToProducts()" 
+                    *ngIf="this.usersService.isContinuePurchase">
+                    Continue your Purchase!</button>
+                    
+            <button class="purchaseBtn" 
+                    (click)="goToProducts()" 
+                    *ngIf="this.usersService.isNewPurchase">
+                     Welcome Back!</button>
+          </div>
+        <br><br><br>
+        <button (click)="onRegisterClicked()">
+                Register</button>
+
+    
+
+</div>

@@ -1,0 +1,23 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+div{
+    position: absolute;
+    right: 1100px;
+    
+}
+span {
+    transform: translateY(50%);
+
+}
+h3{
+    font-family: 'Big Shoulders Display', cursive;
+
+}
+
+.btn {
+    font-family: 'Big Shoulders Display', cursive;
+
+    margin:0.8%;
+    background-color: #F1B24A;
+    float:right;
+    z-index:99;
+}

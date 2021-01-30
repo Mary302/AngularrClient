@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row">
+    
+        <div class="col-md-4"><br><br>
+            <form [formGroup]="registryForm" 
+            (submit)="checkPasswords(registryForm)">
+            <div >
+                <label>ID number:<br></label>
+                <input type="text"
+                 class="form-control"
+                  [formControl]="userID"
+                  [class.is.invalid]="userID.invalid && userID.touched"><br>
+                   <div *ngIf="(userID.errors?.required && userID.touched) || userID.dirty">
+                <p *ngIf="userID.errors?.required">userID is required</p>
+                <p *ngIf="userID.errors?.pattern">userID requires 9 digits</p>
+            </div>  
+            </div> 
+              
+            <div >
+                <label>Email<br></label>
+                <input type="text"
+                 formControlName="email" 
+                 class="form-control" 
+                 [formControl]="email">
+                 <div *ngIf="(email.errors?.required && email.touched) || email.dirty">
+                <p *ngIf="email.errors?.required">email is required</p>
+                <p *ngIf="email.errors?.pattern">email is not valid</p>
+            </div> 
+            </div>
+            
+            <div >
+                <label>password:<br></label>
+                <input type="text" 
+                       formControlName="password" 
+                       class="form-control" 
+                       [formControl]="password">
+                       <div *ngIf="(password.errors?.required && password.touched) || password.dirty">
+                <p *ngIf="password.errors?.required">password is required</p>
+                <p *ngIf="password.errors?.pattern">password can be A-Z, 0-9 in the range of 2-20</p>
+            </div> 
+            </div>
+            
+            <div >
+                <label>confirm password:<br></label>
+                <input type="text" 
+                       formControlName="confirmpassword" 
+                       class="form-control" 
+                       [formControl]="confirmpassword">
+            </div>
+            <input type="submit" 
+                   class="btn btn-info" 
+                   value="Continue">
+        </form>
+        </div>
+        
+
+        
+    </div>
+</div>

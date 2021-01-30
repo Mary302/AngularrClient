@@ -1,0 +1,52 @@
+
+input {
+    width: 100%;
+    font-size: larger;
+    margin: 2%;
+    padding : 2%;    
+    border-radius: 25px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+input:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.container{
+    font-family: 'Big Shoulders Display', cursive;
+    font-size:x-large;
+    padding-left:10%;
+}
+
+form{
+    margin-left:7%;
+    width:200%;
+}
+
+
+button{
+        width: 100%;
+        font-size: large;
+        padding : 3%;   
+        margin:2%; 
+    
+        /* Round corners button */
+        border-radius: 25px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    
+}
+.ng-valid, .ng-valid.required  {
+    border-left: 10px solid #42A948; /* green */
+  }
+  
+  .ng-invalid:not(form)  {
+    border-left: 10px solid #a94442; /* red */
+  }
+
+  
+@media only screen and (max-width: 800px) {
+  
+    form{
+        width:88%;
+    }
+ 
+    }

@@ -1,0 +1,39 @@
+<div class="aboutMenu col-xs-4 col-sm-2 col-lg-2">
+
+<!-- showing the div only if user has logged in -->
+<div *ngIf = "!this.usersService.isLogged && !this.usersService.isAdmin">
+  <p> Hello</p>
+  <p> welcome to the best product site on Earth!</p>
+  <p> complete your login and start your shopping right away.</p></div>
+
+
+<div *ngIf= "this.usersService.isLogged && !this.usersService.isAdmin">
+
+  <h4>Cart price: {{this.cartService.totalPrice}}</h4>
+    <h5>Cart contains:</h5>
+
+    <!-- extracting the user's shopping-cart products -->
+<div *ngFor =" let item of this.cartService.products" class="card border-success mb-3" >
+    <div class="card-header">
+      <button class="delete"
+      style="max-width: 2rem;"
+       (click)="deleteCartitem(item)">
+       &#10007;</button> 
+       <br/>
+       </div>
+    <div class="card-body text-success">
+        <img src="../assets/{{item.productImage}}"
+        width="70" height="70"><img/>
+        <p class="card-text">      {{item.productName}} <br/>
+       {{item.totalPice}} ₪  <br/>
+      x {{item.quantity}} units </p>
+    </div>
+</div>
+    
+
+
+<button (click) = "goToCheckOut()"> Check Out </button>
+<br/> 
+<button (click)="deleteMyCart()"> Delete All Cart Items</button>
+</div>
+</div>

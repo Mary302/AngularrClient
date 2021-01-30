@@ -1,0 +1,28 @@
+<section>
+  <header>
+    <app-header></app-header>
+  </header>
+  <!-- <aside> -->
+    <!-- <div
+      class="rectangle"
+      [ngStyle]="style"
+      mwlResizable
+      [validateResize]="validate"
+      [resizeEdges]="{bottom: true, right: true}"
+      [enableGhostResize]="true"
+      [resizeSnapGrid]="{left: 50, right: 50}"
+      (resizeStart)="onResizeStart($event)"
+      (resizeEnd)="onResizeEnd($event)"> -->
+    <!-- <app-about></app-about> -->
+  <!-- </div> -->
+  <!-- </aside> -->
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+  <aside>
+    <app-info ></app-info>
+  </aside>
+  <footer>
+    <app-footer></app-footer>
+  </footer>
+</section>

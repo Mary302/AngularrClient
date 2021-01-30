@@ -1,0 +1,162 @@
+<div class="adminDiv col-xs-4 col-sm-3 col-lg-3" >
+
+  <div class="adminMenu " *ngIf= "this.usersService.isAdmin" >
+    <div class= "PickProduct">
+    <h3 *ngIf="this.productsService.productToUpdate == undefined">No product selected</h3>
+      <button (click)="openAddProductModal()">Add a new Product</button>
+  </div>
+  <div *ngIf="this.productsService.productToUpdate != undefined">
+    <div class="row">
+      <div class=" col-md-12">
+        <br /><br />
+
+        
+          <button (click)="onClick()">Upload</button>
+       <div  *ngFor="let file of files">
+          <span id="file-label">  
+              {{file.name}}
+        </span> 
+            </div>
+            
+
+            <form [formGroup]="customizeProductForm" (submit)="editProduct()">
+              
+              <div class="form-group">
+                <label>Edit Product Name:<br /></label>
+                <input
+                  name="productName"
+                  type="text"
+                  formControlName="productName"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group">
+                <label>Edit Product Price:<br /></label>
+                <input
+                  name="productPrice"
+                  type="text"
+                  formControlName="productPrice"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group">
+                <select
+                  formControlName="categoryName"
+                  class="form-control"
+                >
+                  <option name="categoryName" disabled selected value>
+                    -- select product category --
+                  </option>
+                  <option
+                    *ngFor="let currentProduct of this.productsService.categoryAr"
+                    value="{{ currentProduct }}"
+                    name="defaultname"
+                    ngDefaultControl
+                  >
+                    {{ currentProduct }}
+                  </option>
+                </select>
+                
+                <input
+                  type="file"
+                  formControlName="productImage"
+                  #fileUpload
+                  id="fileUpload"
+                  accept="image/*"
+                  style="display: none"
+                />
+              </div>
+              <input type="submit" value="Submit" />
+            </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div *ngIf="isAddProductModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 id="titleAmountModal">Add New Product</h2>
+      
+      <span id="closeModalButton" (click)="[closeAddProductModal()]"
+        >&times;</span
+      >
+    </div>
+    <div class="modal-body1">
+      <button (click)="onClick()">Upload</button>
+      <div  *ngFor="let file of files">
+         <span id="file-label">  
+             {{file.name}}
+       </span> 
+           </div>
+
+      <form [formGroup]="customizeProductForm" (submit)="editProduct()">
+        <div class="form-group">
+          <label> Product Name:<br /></label>
+          <input
+            name="productName"
+            type="text"
+            formControlName="productName"
+            class="form-control"
+            [formControl]="productName"
+          />
+        </div>
+        <div class="form-group">
+          <label> Product Price:<br /></label>
+          <input
+            name="productPrice"
+            type="text"
+            formControlName="productPrice"
+            class="form-control"
+            [formControl]="productPrice"
+          />
+        </div>
+        <div class="form-group">
+          <label> Product Description:<br /></label>
+          <input
+            name="productDescription"
+            type="text"
+            formControlName="productDescription"
+            class="form-control"
+            [formControl]="productDescription"
+          />
+        </div>
+        <div class="form-group">
+          <select
+            formControlName="categoryName"
+            class="form-control"
+            [formControl]="categoryName"
+          >
+            <option name="categoryName" disabled selected value>
+              -- select product category --
+            </option>
+            <option
+              *ngFor="
+                let currentProduct of this.productsService.categoryAr
+              "
+              value="{{ currentProduct }}"
+              name="defaultname"
+              ngDefaultControl
+            >
+              {{ currentProduct }}
+            </option>
+          </select>
+         
+          <input
+          type="file"
+          formControlName="productImage"
+          #fileUpload
+          id="fileUpload"
+          accept="image/*"
+          style="display: none"
+          />
+        </div>
+        <input type="submit" value="Submit" />
+      </form>
+
+
+    </div>
+  </div>
+</div>

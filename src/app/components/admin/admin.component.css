@@ -1,0 +1,146 @@
+
+.adminDiv{
+  position: sticky;
+  background:#164A41;
+  float:left;
+  height: 90%;
+  font-family: 'Big Shoulders Display', cursive;
+  color:#F1B24A;
+
+}
+
+.col-md-12{
+  margin-top:-5%;
+  height: 85%;
+}
+
+
+
+input.form-control{
+
+  border-radius: 25px;
+  width: 90%;
+  font-size: large;
+  margin-left:5%;
+  margin-right:5%;
+  padding : 3%;    
+
+}
+
+input:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+
+form{
+  padding : 3%; 
+}
+
+
+.loginContainer{
+  margin-top: 10%;
+}
+
+button{
+  float:center;
+      width: 10vmax;
+      font-size: large;
+      margin: 3%;
+      padding : 3%;    
+  
+      /* Round corners button */
+      border-radius: 25px;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  
+}
+.ng-valid, .ng-valid.required  {
+  border-left: 10px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 10px solid #a94442; /* red */
+}
+
+
+.modal {
+  background-color: rgba(22,74,65,0.8);
+  font-family: 'Big Shoulders Display', cursive;
+  margin-top:4%;
+  margin-bottom: 2%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    outline: 0;
+  }
+
+  
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 45%;
+    height: max-content;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.6s;
+  }
+  
+  .modal-body1 {
+    position: relative;
+    margin-left:25%;
+    flex: 1 1 auto;
+    padding: 5rem;
+    right: 20%;
+  }
+
+  @media only screen and (max-width: 800px) {
+    .modal {
+      display: block;
+      z-index: 1;
+      padding-top: 13%;
+      left: 0;
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.45);
+      position: fixed;
+    }
+    .modal-content {
+      
+      border: 1px solid #888;
+      width: 85%;
+      height: max-content;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      -webkit-animation-name: animatetop;
+      -webkit-animation-duration: 0.4s;
+      animation-name: animatetop;
+      animation-duration: 0.6s;
+    }
+    .modal-body1 {
+      position: relative;
+      flex: 1 1 auto;
+      padding: 1rem;
+      margin-left:28%;
+    }
+    button{
+      width:80%;
+      font-weight: 100;
+    }
+    h3 {
+      font-size: 2vmax;
+    }
+     h5, p {
+      font-size: 2vmax;
+    }
+
+  }
+
+  

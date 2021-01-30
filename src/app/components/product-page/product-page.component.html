@@ -1,0 +1,74 @@
+
+<div
+  id="shopContainer"  *ngIf= "this.usersService.isLogged ">
+  
+  <div>
+    <router-outlet ></router-outlet> 
+    </div>
+
+  <nav class="navbar navbar-expand-lg"
+   style="background-color:#164A41; font-family: 'Big Shoulders Display', cursive; ">
+    <button class="navbar-toggler"
+            type="button" 
+            data-toggle="collapse" 
+            data-target="#navbarNavAltMarkup" 
+            aria-controls="navbarNavAltMarkup" 
+            aria-expanded="false" 
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <input class=" mr-sm-2"
+             placeholder="Search" 
+             type="text" 
+             name="subText" 
+             [(ngModel)]="subText"> <span></span>
+      <div class="navbar-nav" *ngFor="let category of this.productsService.categoryAr">
+        <button class="btn" style="background-color: #F1B24A" (click)="getCategoryItems(category)">
+          {{category}}
+        </button>
+
+      </div>
+      <button class="btn" style="background-color: #F1B24A" (click)="getCategoryItems('')">All</button>
+
+
+    </div>
+  </nav>
+ 
+  <div id="cardDiv" class="row col-xs-6 col-sm-8 col-lg-8 ">
+  <div
+  *ngFor="let currentProduct of ProductList|categoryPipe :categorySubText|searchPipe :subText; index as i"
+  class="flip-card col-xs-4 col-sm-4 col-lg-3"
+  id="cardId">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="../assets/{{currentProduct.productImage}}" alt="Avatar" style="width:89%;height:70%;">
+        <h5>{{currentProduct.productName}}</h5>
+      </div>
+      <div class="flip-card-back">
+        <p class="card-text">{{currentProduct.productDescription}} <br/> {{ currentProduct.productPrice }} ₪</p>
+        <form *ngIf = "!this.usersService.isAdmin">
+            <input  restrict-zero
+              type="number"
+              min="0"
+              style=" width: 70%;"
+              name="units"
+              placeholder="units..."
+              [(ngModel)]="units"
+              (change)="setQuantity()"
+            />
+        </form >
+        <button class="Buy" 
+                *ngIf = "!this.usersService.isAdmin" 
+                (click)="addToCart(currentProduct)">Add</button>
+        <button class="Buy" 
+                *ngIf = "this.usersService.isAdmin" 
+                (click)="updateProduct(currentProduct)">Update </button>
+      </div>
+    </div>
+  </div>
+<!-- </div>  -->
+ 
+  </div>
+</div>
+

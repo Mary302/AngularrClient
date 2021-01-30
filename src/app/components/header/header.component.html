@@ -1,0 +1,3 @@
+<h3 *ngIf="!this.usersService.isLogged"> Hello guest, welcome to Pharm Express!</h3>
+<button *ngIf="this.usersService.isLogged" (click)="logout()" class="btn ">Log Out</button>
+  <h3 *ngIf="this.usersService.isLogged"> Hello {{this.userDetails.name}}, welcome to Pharm Express!</h3>  

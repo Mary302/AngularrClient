@@ -1,0 +1,132 @@
+ .aboutMenu{
+   height: 500px;
+ overflow-x:auto;
+  top: 20px;
+  float:left;
+}
+
+input.form-control{
+
+  border-radius: 25px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  width: 70%;
+  font-size: large;
+  margin-left:5%;
+  margin-right:5%;
+  padding : 3%;    
+
+}
+.card{
+  background-color: #164A41;
+}
+
+input:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.card-text{
+  margin-left:25%;
+  width:fit-content;
+  color:#F1B24A;
+  font-family: 'Big Shoulders Display', cursive;
+
+}
+
+
+button{
+      width: 60%;
+      font-size: large;
+      margin: 3%;
+      padding : 3%;    
+      /* Round corners button */
+      border-radius: 25px;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ffffff; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #F1B24A;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #9dc88d; 
+}
+
+
+
+@media only screen and (max-width: 700px) {
+  .card{
+    margin:1%;
+    width:20%;
+    height: 70%;
+    float:left;
+  }
+  .card-header{
+    margin-top:-3%;
+    max-width:4rem;
+    max-height: 1rem;
+    z-index: 99;
+
+  }
+
+  .card-body{
+    max-width:7rem;
+    max-height:7rem;
+  }
+  .card-text{
+    margin-left:5%
+  }
+
+  .aboutMenu{
+    height: 250px;
+    margin-bottom:7%;
+    overflow: auto;
+
+  }
+  
+  .PickProduct{
+    
+    font-size:smaller;
+    width: 30px;
+
+  }
+  .delete{
+    background-color: transparent;
+
+  }
+  button{
+    width:80%;
+    font-weight: 100;
+  }
+  h1 {
+    font-size: 2vmax;
+  }
+    p {
+      font-size: 3vmax;
+  }
+  img {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1200px) {
+  .aboutMenu{
+    margin-left:2%;
+    width:450px;
+    height: 25rem;
+  }
+  p {
+    font-size: 1.3vmax;
+}
+}
